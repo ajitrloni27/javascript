@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program 7</title>
+</head>
+
+<body>
+
+<h2>Welcome </h2>
+
+<script>
+
+    alert("Welcome to the Web Page!");
+
+    let name = prompt("Enter your name:");
+
+    if(name == null || name == "")
+    {
+        name = "Guest";
+    }
+
+    let answer = confirm("Hello " + name + "! Continue?");
+
+    if(answer)
+    {
+        alert("Welcome " + name);
+    }
+    else
+    {
+        alert("Thank You");
+    }
+
+</script>
+
+</body>
+</html>

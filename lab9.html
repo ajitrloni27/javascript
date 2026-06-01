@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Program 9</title>
+
+<style>
+
+.layer1Style
+{
+    border:solid thick black;
+    padding:1em;
+    width:300px;
+    background-color:yellow;
+    position:absolute;
+    top:100px;
+    left:200px;
+    z-index:0;
+}
+
+.layer2Style
+{
+    border:solid thick red;
+    padding:1em;
+    width:300px;
+    background-color:lightblue;
+    position:absolute;
+    top:120px;
+    left:220px;
+    z-index:0;
+}
+
+.layer3Style
+{
+    border:solid thick green;
+    padding:1em;
+    width:300px;
+    background-color:lightgreen;
+    position:absolute;
+    top:140px;
+    left:240px;
+    z-index:0;
+}
+
+</style>
+
+<script>
+var topLayer = "layer3";
+function mover(toTop)
+{
+    var oldTop = document.getElementById(topLayer).style;
+    var newTop = document.getElementById(toTop).style;
+    oldTop.zIndex = "0";
+    newTop.zIndex = "10";
+    topLayer = document.getElementById(toTop).id;
+}
+</script>
+</head>
+
+
+
+<body>
+<h2>Stacking of Paragraphs</h2>
+
+<div class="layer1Style" id="layer1" onmouseover="mover('layer1')">
+This is the first paragraph.
+Move the mouse here to bring this paragraph to the top.
+</div>
+
+<div class="layer2Style" id="layer2" onmouseover="mover('layer2')">
+This is the second paragraph.
+When the mouse is placed here, this paragraph becomes visible.
+</div>
+
+<div class="layer3Style" id="layer3" onmouseover="mover('layer3')">
+This is the third paragraph.
+Hover the mouse to move this paragraph to the top.
+</div>
+
+</body>
+
+</html>

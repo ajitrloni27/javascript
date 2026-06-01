@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Program 11</title>
+
+<style>
+
+body
+{
+    font-family: Arial;
+    background: #f2f2f2;
+}
+.container
+{
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
+    background: white;
+    padding: 20px;
+    border: 1px solid black;
+}
+fieldset
+{
+    margin-bottom: 15px;
+}
+button
+{
+    padding: 8px;
+    width: 100%;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+<h2>User Form</h2>
+<form>
+<fieldset>
+<legend>Gender</legend>
+<input type="radio" name="gender" value="Male">Male
+<br><br>
+<input type="radio" name="gender" value="Female">Female
+</fieldset>
+
+<fieldset>
+<legend>Hobbies</legend>
+<input type="checkbox" name="hobby" value="Reading">Reading
+<br><br>
+<input type="checkbox" name="hobby" value="Music">Music
+<br><br>
+<input type="checkbox" name="hobby" value="Sports">Sports
+</fieldset>
+<button type="button" onclick="show()">Submit</button>
+</form>
+
+<p id="output"></p>
+</div>
+
+<script>
+
+function show()
+{
+    let gender = "";
+    let g = document.getElementsByName("gender");
+    for(let i=0; i<g.length; i++)
+    {
+        if(g[i].checked)
+        {
+            gender = g[i].value;
+        }
+    }
+
+    let hobbies = "";
+    let h = document.getElementsByName("hobby");
+    for(let i=0; i<h.length; i++)
+    {
+        if(h[i].checked)
+        {
+            hobbies = hobbies + h[i].value + " ";
+        }
+    }
+
+    document.getElementById("output").innerHTML =
+    "Gender: " + gender + "<br><br>" + "Hobbies: " + hobbies;
+}
+
+</script>
+</body>
+</html>
